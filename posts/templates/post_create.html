@@ -1,0 +1,14 @@
+
+
+
+{% extends 'base.html' %}
+
+{% block heading %} Create {% endblock heading %}
+
+{% block content %}
+	<form action="{% url 'create' %}" method="POST">
+	{% csrf_token%}
+	{{form.as_p}}
+	<input type="submit" value="create">
+	</form>
+{% endblock content%}

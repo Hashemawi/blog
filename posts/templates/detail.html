@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html. lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title></title>
-</head>
-<body>
-	
+{% extends 'base.html' %}
+
+{% block heading %} Detail {% endblock heading %}
+
+{% block content %}
 	<ul>
 		<li>{{item.title}}</li>
 		<li>{{item.content}}</li>
 		<li>{{item.id}}</li>
+		<li>{% if item.img %}
+				<img class="card-img-top" src="{{item.img.url}}" alt="Card image cap">
+			{% endif %}</li>
 	</ul>
-
-</body>
-</html>
+{% endblock content%}
