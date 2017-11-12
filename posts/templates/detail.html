@@ -7,8 +7,8 @@
 		<li>{{item.title}}</li>
 		<li>{{item.content}}</li>
 		<li>{{item.id}}</li>
-		<li>{% if item.img %}
-				<img class="card-img-top" src="{{item.img.url}}" alt="Card image cap">
+		{% if item.img %}
+				<li><img class="card-img-top" src="{{item.img.url}}" alt="Card image cap">
 			{% endif %}</li>
 	</ul>
 {% endblock content%}

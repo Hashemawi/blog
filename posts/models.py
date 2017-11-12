@@ -14,5 +14,5 @@ class Post(models.Model):
 	def get_detail_url(self):
 		return reverse("detail",kwargs={"post_id":self.id})
 
-	class meta:
-		ordering = ["-title", "-updated"]
+	class Meta:
+		ordering = ["-updated"]
