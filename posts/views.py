@@ -31,9 +31,9 @@ def post_list(request):
 	} 
 	return render(request, "list.html", context)
 
-def post_detail(request, post_id):
-	#item = Post.objects.get(id=1)
-	item = get_object_or_404(Post, id=post_id)
+def post_detail(request, post_slug):
+	#item = Post.objects.get(slug=1)
+	item = get_object_or_404(Post, slug=post_slug)
 	context = {
 	"item": item,
 	} 
@@ -50,8 +50,8 @@ def post_create(request):
 	}
 	return render(request,"post_create.html", context)
 
-def post_update(request, post_id):
-	item = Post.objects.get(id=post_id)
+def post_update(request, post_slug):
+	item = Post.objects.get(slug=post_slug)
 
 	form = PostForm(request.POST or None, request.FILES or None, instance=item)
 
@@ -65,8 +65,8 @@ def post_update(request, post_id):
 	}
 	return render(request,"post_update.html", context)
 
-def post_delete(request, post_id):
-	Post.objects.get(id=post_id).delete()
+def post_delete(request, post_slug):
+	Post.objects.get(slug=post_slug).delete()
 	messages.warning(request, "Nooooooooooo")
 	return redirect("list")
 
